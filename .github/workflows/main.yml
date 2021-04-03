@@ -36,6 +36,13 @@ jobs:
           BRAVE_TYPE=dev
           APPDIR=AppDir-Dev
           ICON=brave-browser-dev
+        elif ls *beta*.zip 1> /dev/null 2>&1; then
+          # this is a beta release
+          # mark as pre release
+          BRAVE_PRERELEASE=true
+          BRAVE_TYPE=beta
+          APPDIR=AppDir-Beta
+          ICON=brave-browser
         else
           BRAVE_PRERELEASE=false
           BRAVE_TYPE=stable
